@@ -41,14 +41,8 @@ namespace CBurgController {
         Button12
     }
 
-    //% block="wait %time sec"
-    //% block.loc.nl="wacht %time sec"
-    export function wait(time: number) {
-        basic.pause(time * 1000);
-    }
-
-    //% block="button $button"
-    //% block.loc.nl="knop %button"
+    //% block="pin $button"
+    //% block.loc.nl="pin %button"
     export function buttonShim(button: Button) {
         let pin = 0;
         switch (button) {
@@ -68,11 +62,20 @@ namespace CBurgController {
         return pin;
     }
 
-    //% block="button $button pressed"
-    //% block.loc.nl="knop %button ingedrukt"
+    //% block="not button $button is pressed"
+    //% block.loc.nl="knop %button niet is ingedrukt"
+    export function isButtonReleased(button: Button): boolean {
+        let pin = buttonShim(button);
+        if (pins.digitalReadPin(pin) == 1)
+            return false;
+        return true;
+    }
+
+    //% block="button $button is pressed"
+    //% block.loc.nl="knop %button is ingedrukt"
     export function isButtonPressed(button: Button): boolean {
         let pin = buttonShim(button);
-        if (pins.digitalReadPin( pin)==1)
+        if (pins.digitalReadPin(pin) == 1)
             return true;
         return false;
     }
