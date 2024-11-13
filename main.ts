@@ -43,7 +43,7 @@ namespace CBurgController {
 
     //% block="pin $button"
     //% block.loc.nl="pin %button"
-    export function buttonShim(button: Button) {
+    export function buttonPin(button: Button) {
         let pin = 0;
         switch (button) {
             case Button.Button1: pin = DigitalPin.P20; break;
@@ -65,7 +65,7 @@ namespace CBurgController {
     //% block="not button $button is pressed"
     //% block.loc.nl="knop %button niet is ingedrukt"
     export function isButtonReleased(button: Button): boolean {
-        let pin = buttonShim(button);
+        let pin = buttonPin(button);
         if (pins.digitalReadPin(pin) == 1)
             return false;
         return true;
@@ -74,7 +74,7 @@ namespace CBurgController {
     //% block="button $button is pressed"
     //% block.loc.nl="knop %button is ingedrukt"
     export function isButtonPressed(button: Button): boolean {
-        let pin = buttonShim(button);
+        let pin = buttonPin(button);
         if (pins.digitalReadPin(pin) == 1)
             return true;
         return false;
