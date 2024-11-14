@@ -4,7 +4,14 @@ namespace CBurgController {
 
     pins.setPull(DigitalPin.P0, PinPullMode.PullDown)
     pins.setPull(DigitalPin.P1, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P8, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P9, PinPullMode.PullDown)
     pins.setPull(DigitalPin.P2, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P12, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P13, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P14, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P15, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P16, PinPullMode.PullDown)
     pins.setPull(DigitalPin.P19, PinPullMode.PullDown)
     pins.setPull(DigitalPin.P20, PinPullMode.PullDown)
 
