@@ -2,6 +2,12 @@
 //% block="MBit controller"
 namespace CBurgController {
 
+    pins.setPull(DigitalPin.P0, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P1, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P2, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P19, PinPullMode.PullDown)
+    pins.setPull(DigitalPin.P20, PinPullMode.PullDown)
+
     export enum Button {
         //% block="blue-up"
         //% block.loc.nl="blauw-boven"
