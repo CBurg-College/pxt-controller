@@ -1,5 +1,3 @@
-//% color="#00CC00" icon="\u2B88"
-//% block="MBit controller"
 namespace CBurgController {
 
     pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
@@ -79,8 +77,8 @@ namespace CBurgController {
     //% block="not button $button is pressed"
     //% block.loc.nl="knop %button niet is ingedrukt"
     export function isButtonReleased(button: Button): boolean {
-        let pin = buttonPin(button);
-        if (pins.digitalReadPin(pin) == 0)
+        let pin2 = buttonPin(button);
+        if (pins.digitalReadPin(pin2) == 0)
             return false;
         return true;
     }
@@ -89,10 +87,9 @@ namespace CBurgController {
     //% block="button $button is pressed"
     //% block.loc.nl="knop %button is ingedrukt"
     export function isButtonPressed(button: Button): boolean {
-        let pin = buttonPin(button);
-        if (pins.digitalReadPin(pin) == 1)
+        let pin3 = buttonPin(button);
+        if (pins.digitalReadPin(pin3) == 1)
             return false;
-basic.showNumber(button)
         return true;
     }
 }
