@@ -2,10 +2,6 @@
 //% block="MBit controller"
 namespace CBurgController {
 
-    pins.digitalWritePin(DigitalPin.P0, 1)
-    pins.digitalWritePin(DigitalPin.P1, 1)
-    pins.digitalWritePin(DigitalPin.P2, 1)
-    pins.digitalWritePin(DigitalPin.P16, 1)
     pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
@@ -79,25 +75,23 @@ namespace CBurgController {
         return pin;
     }
 
-    // inverted logic because of common VCC
+    // inverted logic because of PullUp
     //% block="not button $button is pressed"
     //% block.loc.nl="knop %button niet is ingedrukt"
     export function isButtonReleased(button: Button): boolean {
         let pin = buttonPin(button);
         if (pins.digitalReadPin(pin) == 0)
             return false;
-basic.showNumber(button)
         return true;
     }
 
-    // inverted logic because of common VCC
+    // inverted logic because of PullUp
     //% block="button $button is pressed"
     //% block.loc.nl="knop %button is ingedrukt"
     export function isButtonPressed(button: Button): boolean {
         let pin = buttonPin(button);
         if (pins.digitalReadPin(pin) == 1)
             return false;
-basic.showNumber(button)
         return true;
     }
 }
