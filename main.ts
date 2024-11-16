@@ -92,6 +92,7 @@ namespace CBurgController {
         let pin = buttonPin(button);
         if (pins.digitalReadPin(pin) == 1)
             return false;
+basic.showNumber(button)
         return true;
     }
 }
