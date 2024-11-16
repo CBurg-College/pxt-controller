@@ -16,11 +16,11 @@ namespace CBurgController {
     pins.setPull(DigitalPin.P20, PinPullMode.PullUp)
 
     export enum Button {
-        //% block="black-up"
-        //% block.loc.nl="zwart-omhoog"
+        //% block="black-top"
+        //% block.loc.nl="zwart-boven"
         Button1, //P13
-        //% block="black-down"
-        //% block.loc.nl="zwart-omlaag"
+        //% block="black-bottom"
+        //% block.loc.nl="zwart-onder"
         Button2, //P15 
         //% block="black-left"
         //% block.loc.nl="zwart-links"
@@ -28,11 +28,11 @@ namespace CBurgController {
         //% block="black-right"
         //% block.loc.nl="zwart-rechts"
         Button4, //P9
-        //% block="white-up"
-        //% block.loc.nl="wit-omhoog"
+        //% block="white-top"
+        //% block.loc.nl="wit-boven"
         Button5, //p16
-        //% block="white-down"
-        //% block.loc.nl="wit-omlaag"
+        //% block="white-bottom"
+        //% block.loc.nl="wit-onder"
         Button6, //P2
         //% block="white-left"
         //% block.loc.nl="wit-links"
