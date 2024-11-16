@@ -2,55 +2,59 @@
 //% block="MBit controller"
 namespace CBurgController {
 
-    pins.setPull(DigitalPin.P0, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P1, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P8, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P9, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P2, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P12, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P13, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P14, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P15, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P16, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P19, PinPullMode.PullDown)
-    pins.setPull(DigitalPin.P20, PinPullMode.PullDown)
+    pins.digitalWritePin(DigitalPin.P0, 1)
+    pins.digitalWritePin(DigitalPin.P1, 1)
+    pins.digitalWritePin(DigitalPin.P2, 1)
+    pins.digitalWritePin(DigitalPin.P16, 1)
+    pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P9, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P12, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P15, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P19, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P20, PinPullMode.PullUp)
 
     export enum Button {
-        //% block="blue-up"
-        //% block.loc.nl="blauw-boven"
+        //% block="blue-left"
+        //% block.loc.nl="blauw-links"
         Button1,
-        //% block="blue-mid"
-        //% block.loc.nl="blauw-midden"
+        //% block="red-left"
+        //% block.loc.nl="rood-links"
         Button2,
-        //% block="blue-bottom"
-        //% block.loc.nl="blauw-onder"
+        //% block="yellow-left"
+        //% block.loc.nl="geel-links"
         Button3,
         //% block="red-up"
-        //% block.loc.nl="rood-boven"
+        //% block.loc.nl="rood-omhoog"
         Button4,
-        //% block="red-mid"
-        //% block.loc.nl="rood-midden"
+        //% block="black-left"
+        //% block.loc.nl="zwart-links"
         Button5,
-        //% block="red-bottom"
-        //% block.loc.nl="rood-onder"
+        //% block="red-down"
+        //% block.loc.nl="rood-omlaag"
         Button6,
-        //% block="yellow-up"
-        //% block.loc.nl="geel-boven"
+        //% block="black-up"
+        //% block.loc.nl="zwart-omhoog"
         Button7,
-        //% block="yellow-mid"
-        //% block.loc.nl="geel-midden"
+        //% block="red-right"
+        //% block.loc.nl="rood-rechts"
         Button8,
-        //% block="yellow-bottom"
-        //% block.loc.nl="geel-onder"
+        //% block="black-down"
+        //% block.loc.nl="zwart-omlaag"
         Button9,
-        //% block="white-up"
-        //% block.loc.nl="wit-boven"
+        //% block="blue-right"
+        //% block.loc.nl="blauw-rechts"
         Button10,
-        //% block="white-mid"
-        //% block.loc.nl="wit-midden"
+        //% block="black-right"
+        //% block.loc.nl="zwart-rechts"
         Button11,
-        //% block="white-bottom"
-        //% block.loc.nl="wit-onder"
+        //% block="yellow-right"
+        //% block.loc.nl="geel-rechts"
         Button12
     }
 
@@ -75,21 +79,25 @@ namespace CBurgController {
         return pin;
     }
 
+    // inverted logic because of common VCC
     //% block="not button $button is pressed"
     //% block.loc.nl="knop %button niet is ingedrukt"
     export function isButtonReleased(button: Button): boolean {
         let pin = buttonPin(button);
-        if (pins.digitalReadPin(pin) == 1)
+        if (pins.digitalReadPin(pin) == 0)
             return false;
+basic.showNumber(button)
         return true;
     }
 
+    // inverted logic because of common VCC
     //% block="button $button is pressed"
     //% block.loc.nl="knop %button is ingedrukt"
     export function isButtonPressed(button: Button): boolean {
         let pin = buttonPin(button);
         if (pins.digitalReadPin(pin) == 1)
-            return true;
-        return false;
+            return false;
+basic.showNumber(button)
+        return true;
     }
 }
