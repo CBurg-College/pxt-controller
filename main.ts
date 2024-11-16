@@ -28,29 +28,29 @@ namespace CBurgController {
         //% block="black-right"
         //% block.loc.nl="zwart-rechts"
         Button4, //P9
-        //% block="red-up"
-        //% block.loc.nl="rood-omhoog"
+        //% block="white-up"
+        //% block.loc.nl="wit-omhoog"
         Button5, //p16
-        //% block="red-down"
-        //% block.loc.nl="rood-omlaag"
+        //% block="white-down"
+        //% block.loc.nl="wit-omlaag"
         Button6, //P2
-        //% block="red-left"
-        //% block.loc.nl="rood-links"
+        //% block="white-left"
+        //% block.loc.nl="wit-links"
         Button7, //P19
-        //% block="red-right"
-        //% block.loc.nl="rood-rechts"
+        //% block="white-right"
+        //% block.loc.nl="wit-rechts"
         Button8, //P14
-        //% block="blue-left"
-        //% block.loc.nl="blauw-links"
+        //% block="yellow-top"
+        //% block.loc.nl="geel-boven"
         Button9, //P20
-        //% block="blue-right"
-        //% block.loc.nl="blauw-rechts"
-        Button10, //P12
-        //% block="yellow-left"
-        //% block.loc.nl="geel-links"
-        Button11, //P0
-        //% block="yellow-right"
-        //% block.loc.nl="geel-rechts"
+        //% block="yellow-bottom"
+        //% block.loc.nl="geel-onder"
+        Button10, //P0
+        //% block="blue"
+        //% block.loc.nl="blauw"
+        Button11, //P12
+        //% block="red"
+        //% block.loc.nl="rood"
         Button12 //P8
     }
 
@@ -68,8 +68,8 @@ namespace CBurgController {
             case Button.Button7: pin = DigitalPin.P19; break;
             case Button.Button8: pin = DigitalPin.P14; break;
             case Button.Button9: pin = DigitalPin.P20; break;
-            case Button.Button10: pin = DigitalPin.P12; break;
-            case Button.Button11: pin = DigitalPin.P0; break;
+            case Button.Button10: pin = DigitalPin.P0; break;
+            case Button.Button11: pin = DigitalPin.P12; break;
             case Button.Button12: pin = DigitalPin.P8; break;
         }
         return pin;
