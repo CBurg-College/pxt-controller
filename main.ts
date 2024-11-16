@@ -56,7 +56,7 @@ namespace CBurgController {
 
     //% block="pin $button"
     //% block.loc.nl="pin %button"
-    export function buttonPin(button: Button) {
+    export function buttonPin(button: Button) : number {
         let pin = 0;
         switch (button) {
             case Button.Button1: pin = DigitalPin.P20; break;
