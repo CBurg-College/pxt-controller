@@ -1,3 +1,5 @@
+//% color="#00CC00" icon="\u2B88"
+//% block="Robot Controller"
 namespace CBurgController {
 
     pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
