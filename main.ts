@@ -16,39 +16,39 @@ namespace CBurgController {
     pins.setPull(DigitalPin.P20, PinPullMode.PullUp)
 
     export enum Button {
-        //% block="blue-left"
-        //% block.loc.nl="blauw-links"
-        Button1,
-        //% block="red-left"
-        //% block.loc.nl="rood-links"
-        Button2,
-        //% block="yellow-left"
-        //% block.loc.nl="geel-links"
-        Button3,
-        //% block="red-up"
-        //% block.loc.nl="rood-omhoog"
-        Button4,
-        //% block="black-left"
-        //% block.loc.nl="zwart-links"
-        Button5,
-        //% block="red-down"
-        //% block.loc.nl="rood-omlaag"
-        Button6,
         //% block="black-up"
         //% block.loc.nl="zwart-omhoog"
         Button7,
-        //% block="red-right"
-        //% block.loc.nl="rood-rechts"
-        Button8,
         //% block="black-down"
         //% block.loc.nl="zwart-omlaag"
         Button9,
-        //% block="blue-right"
-        //% block.loc.nl="blauw-rechts"
-        Button10,
+        //% block="black-left"
+        //% block.loc.nl="zwart-links"
+        Button5,
         //% block="black-right"
         //% block.loc.nl="zwart-rechts"
         Button11,
+        //% block="red-up"
+        //% block.loc.nl="rood-omhoog"
+        Button4,
+        //% block="red-down"
+        //% block.loc.nl="rood-omlaag"
+        Button6,
+        //% block="red-left"
+        //% block.loc.nl="rood-links"
+        Button2,
+        //% block="red-right"
+        //% block.loc.nl="rood-rechts"
+        Button8,
+        //% block="blue-left"
+        //% block.loc.nl="blauw-links"
+        Button1,
+        //% block="blue-right"
+        //% block.loc.nl="blauw-rechts"
+        Button10,
+        //% block="yellow-left"
+        //% block.loc.nl="geel-links"
+        Button3,
         //% block="yellow-right"
         //% block.loc.nl="geel-rechts"
         Button12
