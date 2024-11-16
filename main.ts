@@ -18,40 +18,40 @@ namespace CBurgController {
     export enum Button {
         //% block="black-up"
         //% block.loc.nl="zwart-omhoog"
-        Button7,
+        Button1, //P13
         //% block="black-down"
         //% block.loc.nl="zwart-omlaag"
-        Button9,
+        Button2, //P15 
         //% block="black-left"
         //% block.loc.nl="zwart-links"
-        Button5,
+        Button3, //P1
         //% block="black-right"
         //% block.loc.nl="zwart-rechts"
-        Button11,
+        Button4, //P9
         //% block="red-up"
         //% block.loc.nl="rood-omhoog"
-        Button4,
+        Button5, //p16
         //% block="red-down"
         //% block.loc.nl="rood-omlaag"
-        Button6,
+        Button6, //P2
         //% block="red-left"
         //% block.loc.nl="rood-links"
-        Button2,
+        Button7, //P19
         //% block="red-right"
         //% block.loc.nl="rood-rechts"
-        Button8,
+        Button8, //P14
         //% block="blue-left"
         //% block.loc.nl="blauw-links"
-        Button1,
+        Button9, //P20
         //% block="blue-right"
         //% block.loc.nl="blauw-rechts"
-        Button10,
+        Button10, //P12
         //% block="yellow-left"
         //% block.loc.nl="geel-links"
-        Button3,
+        Button11, //P0
         //% block="yellow-right"
         //% block.loc.nl="geel-rechts"
-        Button12
+        Button12 //P8
     }
 
     //% block="pin $button"
@@ -59,17 +59,17 @@ namespace CBurgController {
     export function buttonPin(button: Button) : number {
         let pin = 0;
         switch (button) {
-            case Button.Button1: pin = DigitalPin.P20; break;
-            case Button.Button2: pin = DigitalPin.P19; break;
-            case Button.Button3: pin = DigitalPin.P0; break;
-            case Button.Button4: pin = DigitalPin.P16; break;
-            case Button.Button5: pin = DigitalPin.P1; break;
+            case Button.Button1: pin = DigitalPin.P13; break;
+            case Button.Button2: pin = DigitalPin.P15; break;
+            case Button.Button3: pin = DigitalPin.P1; break;
+            case Button.Button4: pin = DigitalPin.P9; break;
+            case Button.Button5: pin = DigitalPin.P16; break;
             case Button.Button6: pin = DigitalPin.P2; break;
-            case Button.Button7: pin = DigitalPin.P13; break;
+            case Button.Button7: pin = DigitalPin.P19; break;
             case Button.Button8: pin = DigitalPin.P14; break;
-            case Button.Button9: pin = DigitalPin.P15; break;
+            case Button.Button9: pin = DigitalPin.P20; break;
             case Button.Button10: pin = DigitalPin.P12; break;
-            case Button.Button11: pin = DigitalPin.P9; break;
+            case Button.Button11: pin = DigitalPin.P0; break;
             case Button.Button12: pin = DigitalPin.P8; break;
         }
         return pin;
