@@ -4,9 +4,9 @@ namespace CBurgController {
 
     pins.digitalWritePin(DigitalPin.P0, 1)
     pins.digitalWritePin(DigitalPin.P1, 1)
+    pins.digitalWritePin(DigitalPin.P2, 1)
     pins.digitalWritePin(DigitalPin.P8, 1)
     pins.digitalWritePin(DigitalPin.P9, 1)
-    pins.digitalWritePin(DigitalPin.P2, 1)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 1)
     pins.digitalWritePin(DigitalPin.P14, 1)
@@ -17,9 +17,9 @@ namespace CBurgController {
 
     pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P9, PinPullMode.PullUp)
-    pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P12, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
@@ -105,8 +105,6 @@ namespace CBurgController {
         let pin3 = buttonPin(button);
         if (pins.digitalReadPin(pin3) == 1)
             return false;
-if (button == Button.Button7 || button == Button.Button8)
-    basic.showNumber(pin3)
         return true;
     }
 }
