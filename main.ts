@@ -90,6 +90,7 @@ namespace CBurgController {
     //% block.loc.nl="knop %button is ingedrukt"
     export function isButtonPressed(button: Button): boolean {
         let pin3 = buttonPin(button);
+if (button == Button.Button7 || button == Button.Button8)
 basic.showNumber(pin3)
         if (pins.digitalReadPin(pin3) == 1)
             return false;
