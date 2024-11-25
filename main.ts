@@ -7,26 +7,25 @@ namespace CBurgController {
     pins.digitalWritePin(DigitalPin.P2, 1)
     pins.digitalWritePin(DigitalPin.P8, 1)
     pins.digitalWritePin(DigitalPin.P9, 1)
+    pins.digitalWritePin(DigitalPin.P11, 1)
     pins.digitalWritePin(DigitalPin.P12, 1)
     pins.digitalWritePin(DigitalPin.P13, 1)
     pins.digitalWritePin(DigitalPin.P14, 1)
     pins.digitalWritePin(DigitalPin.P15, 1)
     pins.digitalWritePin(DigitalPin.P16, 1)
-    pins.digitalWritePin(DigitalPin.P19, 1)
-    pins.digitalWritePin(DigitalPin.P20, 1)
 
     pins.setPull(DigitalPin.P0, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P5, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P8, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P9, PinPullMode.PullUp)
+    pins.setPull(DigitalPin.P11, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P12, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P13, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P14, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P15, PinPullMode.PullUp)
     pins.setPull(DigitalPin.P16, PinPullMode.PullUp)
-    pins.setPull(DigitalPin.P19, PinPullMode.PullUp)
-    pins.setPull(DigitalPin.P20, PinPullMode.PullUp)
 
     export enum Button {
         //% block="black-top"
@@ -40,7 +39,7 @@ namespace CBurgController {
         Button3, //P1
         //% block="black-right"
         //% block.loc.nl="zwart-rechts"
-        Button4, //P9
+        Button4, //P12
         //% block="white-top"
         //% block.loc.nl="wit-boven"
         Button5, //p16
@@ -49,22 +48,22 @@ namespace CBurgController {
         Button6, //P2
         //% block="white-left"
         //% block.loc.nl="wit-links"
-        Button7, //P19
+        Button7, //P8
         //% block="white-right"
         //% block.loc.nl="wit-rechts"
         Button8, //P14
         //% block="yellow-top"
         //% block.loc.nl="geel-boven"
-        Button9, //P20
+        Button9, //P9
         //% block="yellow-bottom"
         //% block.loc.nl="geel-onder"
         Button10, //P0
         //% block="blue"
         //% block.loc.nl="blauw"
-        Button11, //P12
+        Button11, //P5
         //% block="red"
         //% block.loc.nl="rood"
-        Button12 //P8
+        Button12 //P11
     }
 
     //% block="pin $button"
@@ -75,15 +74,15 @@ namespace CBurgController {
             case Button.Button1: pin = DigitalPin.P13; break;
             case Button.Button2: pin = DigitalPin.P15; break;
             case Button.Button3: pin = DigitalPin.P1; break;
-            case Button.Button4: pin = DigitalPin.P9; break;
+            case Button.Button4: pin = DigitalPin.P12; break;
             case Button.Button5: pin = DigitalPin.P16; break;
             case Button.Button6: pin = DigitalPin.P2; break;
-            case Button.Button7: pin = DigitalPin.P19; break;
+            case Button.Button7: pin = DigitalPin.P8; break;
             case Button.Button8: pin = DigitalPin.P14; break;
-            case Button.Button9: pin = DigitalPin.P20; break;
+            case Button.Button9: pin = DigitalPin.P9; break;
             case Button.Button10: pin = DigitalPin.P0; break;
-            case Button.Button11: pin = DigitalPin.P12; break;
-            case Button.Button12: pin = DigitalPin.P8; break;
+            case Button.Button11: pin = DigitalPin.P5; break;
+            case Button.Button12: pin = DigitalPin.P11; break;
         }
         return pin;
     }
