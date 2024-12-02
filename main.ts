@@ -1,6 +1,11 @@
 //% color="#00CC00" icon="\u2B88"
-//% block="Robot Controller"
-namespace CBurgController {
+//% block="Controller"
+namespace CController {
+
+    let DELAY = 500
+    let TIME: number = 0
+    let PINPRESSED: number = 0
+    let PINRELEASED: number = 0
 
     pins.digitalWritePin(DigitalPin.P0, 1)
     pins.digitalWritePin(DigitalPin.P1, 1)
@@ -94,6 +99,10 @@ namespace CBurgController {
         let pin2 = buttonPin(button);
         if (pins.digitalReadPin(pin2) == 0)
             return false;
+        if (PINRELEASED == pin2 && TIME > input.runningTime())
+            return false;
+        TIME = input.runningTime() + DELAY
+        PINRELEASED = pin2
         return true;
     }
 
@@ -104,6 +113,16 @@ namespace CBurgController {
         let pin3 = buttonPin(button);
         if (pins.digitalReadPin(pin3) == 1)
             return false;
+        if (PINPRESSED == pin3 && TIME > input.runningTime())
+            return false;
+        TIME = input.runningTime() + DELAY
+        PINPRESSED = pin3
         return true;
+    }
+
+    //% block="set repeating time to $delay msec"
+    //% block.loc.nl="stel herhaaltijd in op $delay msec"
+    export function buttonDelay(delay: number) {
+        DELAY = delay
     }
 }
