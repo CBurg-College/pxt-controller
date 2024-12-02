@@ -71,6 +71,13 @@ namespace CController {
         Button12 //P11
     }
 
+    //% block="set repeating time to $delay msec"
+    //% block.loc.nl="stel herhaaltijd in op $delay msec"
+    //% delay.defl=500
+    export function buttonDelay(delay: number) {
+        DELAY = delay
+    }
+
     //% block="pin $button"
     //% block.loc.nl="pin %button"
     export function buttonPin(button: Button) : number {
@@ -118,11 +125,5 @@ namespace CController {
         TIME = input.runningTime() + DELAY
         PINPRESSED = pin3
         return true;
-    }
-
-    //% block="set repeating time to $delay msec"
-    //% block.loc.nl="stel herhaaltijd in op $delay msec"
-    export function buttonDelay(delay: number) {
-        DELAY = delay
     }
 }
